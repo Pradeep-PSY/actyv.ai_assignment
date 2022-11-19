@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 
 const User = () => {
     const [data, setData] = useState([])
@@ -8,17 +8,21 @@ console.log(data)
     useEffect(() => {
         axios.get('http://localhost:8000/register/all')
             .then((res) => setData(res.data))
-    }, [data.length])
+    }, [])
     return (
         <Box textAlign='center'>
 
-            {data.length > 0? (
-                data.map((el) => {
-                    <Text>{el.name}</Text>
-                })
-            ):(
-            ''
-        )}
+           
+        {
+            data && data.map((el) => (
+               <Box m={2} border={'1px'}>
+                    <Text>Name:{el.name}</Text>
+                    <Text>PhoneNumber:{el.phone}</Text>
+                    <Text>PhoneNumber:{el.email}</Text>
+
+               </Box>
+            ))
+        }
         </Box>
     )
 }

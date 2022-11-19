@@ -28,11 +28,18 @@ import {
 
     const handleSubmit = () => {
         console.log(name,email,phonenumber,password,confirmpassword);
-        axios.post('http://localhost:8000/register/user',{name,email,phonenumber,password,})
-        .then((res)=>alert(res.data))
-        .catch((err)=>console.log(err))
+        if(password == confirmpassword){
+
+            axios.post('http://localhost:8000/register/user',{name,email,phone:phonenumber,password,})
+            .then((res)=>alert(res.data))
+            .catch((err)=>console.log(err))
+        }
+        else{
+            alert('Please enter same password in both fields')
+        }
     }
   
+    
     return (
       <Flex
         minH={'100vh'}
@@ -44,9 +51,7 @@ import {
             <Heading fontSize={'4xl'} textAlign={'center'}>
               Sign up
             </Heading>
-            <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool features ✌️
-            </Text>
+            
           </Stack>
           <Box
             rounded={'lg'}
@@ -69,12 +74,12 @@ import {
               </FormControl>
               <FormControl id="phone_number" isRequired>
                 <FormLabel>Phone Number</FormLabel>
-                <Input type="number" value={phonenumber} onChange={(e)=>setPhoneNumber(e.target.value)} />
+                <Input type="text" maxLength={10} value={phonenumber} onChange={(e)=>setPhoneNumber(e.target.value)} />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                  <Input type={showPassword ? 'text' : 'password'} maxLength={8} value={password} onChange={(e)=>setPassword(e.target.value)}/>
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -89,7 +94,7 @@ import {
               <FormControl id="confirm_password" isRequired>
                 <FormLabel> Confirm Password</FormLabel>
                 <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} value={confirmpassword } onChange={(e)=>setConfirmPassword(e.target.value)} />
+                  <Input type={showPassword ? 'text' : 'password'} maxLength={8} value={confirmpassword } onChange={(e)=>setConfirmPassword(e.target.value)} />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
