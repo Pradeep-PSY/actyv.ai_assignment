@@ -14,7 +14,6 @@ for (let i = 0; i < arr.length - 1; i++) {
 
 console.log(sum);
 
-
 //done 3 question
 let sent = "This is a test sentence";
 sent = sent.split(" ");
@@ -24,8 +23,6 @@ for (let i = sent.length - 1; i >= 0; i--) {
 }
 
 console.log(rever);
-
-
 
 // done 4 question
 let sent_arr = ["This", "is", "a", "test", "array", "a", "test"];
@@ -40,8 +37,24 @@ for (let j = 0; j < sent_arr.length; j++) {
 
 console.log(sent_rev_arr);
 
-
 // 2 question
-let num = 234;
- num = 234 % 10;
-console.log(num)
+function reverse_A(x) {
+  let num = x;
+  let reverse = 0,
+    remainder;
+  while (num > 0) {
+    remainder = num % 10;
+
+    reverse = reverse * 10 + remainder;
+    num = Math.floor(num / 10);
+  }
+  return reverse;
+}
+
+console.log(reverse_A(172));
+//logic
+// while (n != 0) {
+//   remainder = n % 10;
+//   reverse = reverse * 10 + remainder;
+//   n /= 10;
+// }
