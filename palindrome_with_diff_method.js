@@ -98,3 +98,17 @@ function solve_bruteforce(str){
 }
 
 console.log(solve_bruteforce(str))
+
+
+//fib 
+let n1 = 0 , n2 = 1
+function finb(val){
+    for(let i=0;i<val;i++){
+
+        console.log(n1)
+        n1 = n1 + n2
+        n2++
+    }
+}
+
+finb(10)
