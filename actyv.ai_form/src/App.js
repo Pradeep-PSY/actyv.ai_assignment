@@ -9,7 +9,6 @@ import {
   Grid,
   theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import MainRoutes from './pages/MainRoutes';
 

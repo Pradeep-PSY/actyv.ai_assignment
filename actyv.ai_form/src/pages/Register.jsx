@@ -28,15 +28,15 @@ import {
 
     const handleSubmit = () => {
         console.log(name,email,phonenumber,password,confirmpassword);
-        if(password == confirmpassword){
+        // if(password == confirmpassword){
 
-            axios.post('http://localhost:8000/register/user',{name,email,phone:phonenumber,password,})
-            .then((res)=>alert(res.data))
-            .catch((err)=>console.log(err))
-        }
-        else{
-            alert('Please enter same password in both fields')
-        }
+        //     axios.post('http://localhost:8000/register/user',{name,email,phone:phonenumber,password,})
+        //     .then((res)=>alert(res.data))
+        //     .catch((err)=>console.log(err))
+        // }
+        // else{
+        //     alert('Please enter same password in both fields')
+        // }
     }
   
     
