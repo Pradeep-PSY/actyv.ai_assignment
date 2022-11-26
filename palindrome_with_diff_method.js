@@ -115,3 +115,14 @@ function finb(val){
 }
 
 finb(10)
+
+
+function fibo(x){
+    if(x==0 || x== 1) return 1
+   else{
+   return  console.log( fibo(x-1) + fibo(x-2))
+    
+   }
+}
+
+fibo(10)
