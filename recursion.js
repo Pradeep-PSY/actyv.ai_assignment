@@ -16,3 +16,13 @@ function fib(x){
 }
 
 console.log(fib(5))
+
+//gcd hcf (highest common factor )
+
+function gcd(a,b){
+    if(a==0) return b
+    else return gcd(b%a,a)
+}
+
+console.log(gcd(60,36))
+console.log(gcd(36,60))
